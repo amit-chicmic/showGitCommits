@@ -1,0 +1,30 @@
+/* #commits {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#commits td, #commits th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#commits tr:nth-child(even){background-color: #f2f2f2;}
+
+#commits tr:hover {background-color: #ddd;}
+
+#commits th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+} */
+table{
+        box-shadow: 0 0 9px;
+    font-size: 14px;
+}
+tbody{
+    background: whitesmoke;
+    color: #000000;
+}
