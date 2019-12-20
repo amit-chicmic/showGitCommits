@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommitListComponent } from './commit-list/commit-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CommitListComponent
+    CommitListComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
