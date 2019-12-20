@@ -1,7 +1,6 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { CommitListComponent } from './commit-list/commit-list.component';
-
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { CommitListComponent } from "./commit-list/commit-list.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'commits', pathMatch: 'full' },
