@@ -1,1 +1,24 @@
-<p>commit-list works!</p>
+<div class="container mt-5">
+    <div class="title">
+        <h4>{{title}}</h4>
+    </div>
+    <table class="table" id="commits">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Commit Date</th>
+                <th scope="col">Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let obj of commits">
+                <td>{{obj.commit.committer.name}}</td>
+                <td>{{obj.commit.committer.email || 'NA'}}</td>
+                <td>{{getDate(obj.commit.committer.date)}}</td>
+                <td>{{obj.commit.message || 'NA'}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
