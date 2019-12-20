@@ -7,7 +7,7 @@
             <tr>
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
-                <th scope="col">Commit Date</th>
+                <th scope="col">Commit Time</th>
                 <th scope="col">Message</th>
             </tr>
         </thead>
@@ -15,8 +15,8 @@
             <tr *ngFor="let obj of commits">
                 <td>{{obj.commit.committer.name}}</td>
                 <td>{{obj.commit.committer.email || 'NA'}}</td>
-                <td>{{getDate(obj.commit.committer.date)}}</td>
-                <td>{{obj.commit.message || 'NA'}}</td>
+                <td class="text-mute">{{getDate(obj.commit.committer.date)}}</td>
+                <td class="text-mute">{{obj.commit.message || 'NA'}}</td>
             </tr>
 
         </tbody>

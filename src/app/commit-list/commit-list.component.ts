@@ -27,7 +27,29 @@ export class CommitListComponent implements OnInit {
     })
   }
   getDate(str) {
-    return moment(str).format('DD MMM, YYYY')
+    const date = new Date(str);
+    const currentDate = new Date();
+    if (date.getFullYear() == currentDate.getFullYear()) {
+      if (date.getMonth() == currentDate.getMonth()) {
+        if (date.getDate() == currentDate.getDate()) {
+          if (date.getHours() == currentDate.getHours()) {
+            if (date.getMinutes() == currentDate.getMinutes()) {
+              return `${currentDate.getSeconds() - date.getSeconds()} seconds ago`
+            } else {
+              return `${currentDate.getMinutes() - date.getMinutes()} minutes ago`
+            }
+          } else {
+            return `${currentDate.getHours() - date.getHours()} hours ago`
+          }
+        } else {
+          return `${currentDate.getDate() - date.getDate()} days ago`
+        }
+      } else {
+        return `${currentDate.getMonth() - date.getMonth()} months ago`
+      }
+    } else {
+      return `${currentDate.getFullYear() - date.getFullYear()} years ago`
+    }
   }
 
 }
