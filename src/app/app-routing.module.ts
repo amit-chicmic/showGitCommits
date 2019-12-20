@@ -1,15 +1,14 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { CommitListComponent } from './commit-list/commit-list.component';
-
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { CommitListComponent } from "./commit-list/commit-list.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: 'commits', pathMatch: 'full' },
-  { path: 'commits', component: CommitListComponent }
+  { path: "", redirectTo: "commits", pathMatch: "full" },
+  { path: "commits", component: CommitListComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
