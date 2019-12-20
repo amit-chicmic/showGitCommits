@@ -29,10 +29,7 @@ export class HttpService {
     const apiUrl = `${this.baseUrl}${url}`;
     if (backGroundUrl) {
     }
-    return this.http.get(apiUrl, { params: searchParams })
-      .pipe(map((response: any) => {
-        return response;
-      }));
+    return this.http.get(apiUrl, { observe: 'response', params: searchParams });
   }
 
   postData(url: string, data: any, formData?: boolean) {
