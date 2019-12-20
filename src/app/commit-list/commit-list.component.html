@@ -1,24 +1,29 @@
-<div class="container mt-5">
-    <div class="title">
-        <h4>{{title}}</h4>
-    </div>
-    <table class="table" id="commits">
-        <thead>
-            <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Commit Time</th>
-                <th scope="col">Message</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let obj of commits">
-                <td>{{obj.commit.committer.name}}</td>
-                <td>{{obj.commit.committer.email || 'NA'}}</td>
-                <td class="text-mute">{{getDate(obj.commit.committer.date)}}</td>
-                <td class="text-mute">{{obj.commit.message || 'NA'}}</td>
-            </tr>
+<div class="title">
+    <h4>{{title}}</h4>
+</div>
+<table class="table" id="commits">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Commit Time</th>
+            <th scope="col">Message</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let obj of commits">
+            <td>{{obj.commit.committer.name}}</td>
+            <td>{{obj.commit.committer.email || 'NA'}}</td>
+            <td class="text-mute">{{getDate(obj.commit.committer.date)}}</td>
+            <td class="text-mute">{{obj.commit.message || 'NA'}}</td>
+        </tr>
 
-        </tbody>
-    </table>
+    </tbody>
+</table>
+<div class="pagination">
+    <span [ngClass]="{'custom-paginate link': true}" *ngIf="first" (click)="getCommits('first')">&laquo;
+        &laquo;</span>
+    <span [ngClass]="{'custom-paginate link': true}" *ngIf="prev" (click)="getCommits('prev')">&laquo;</span>
+    <span [ngClass]="{'custom-paginate link ml-1': true}" *ngIf="next" (click)="getCommits('next')">&raquo;</span>
+    <span [ngClass]="{'custom-paginate link': true}" *ngIf="last" (click)="getCommits('last')">&raquo;&raquo;</span>
 </div>
